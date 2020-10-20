@@ -11,6 +11,7 @@ namespace Sprint1
         static void Main(string[] args)
         {
             Halllo
+                Test
         }
     }
 }
