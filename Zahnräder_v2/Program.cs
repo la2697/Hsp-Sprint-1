@@ -31,12 +31,20 @@ namespace Berechnung_von_Zahnrädern{
 
             double A=((d / 2) * (d / 2) * Pi);
 
-            Console.Write("\nWaehlen Sie das Material\n1: EN-GJL-200\n2: EN-GJS-350\n3: S235JR\nAuswahl: ");
-            int material = Convert.ToInt16(Console.ReadLine());
+            int material = 0;
+            while (material < 1 || material > 3){
+                Console.Write("\nWaehlen Sie das Material\n1: EN-GJL-200\n2: EN-GJS-350\n3: S235JR\nAuswahl: ");
+                material = Convert.ToInt16(Console.ReadLine());
+                if (material < 1 || material > 3) Console.WriteLine("\nFEHLER: Ungueltige Eingabe");
+            }
 
-            Console.Write("\nWählen Sie das Kopfspiel\n1: Standardkopfspiel\n2: Kopfspiel 0.1 DIN 867\n3: Kopfspiel 0.3 DIN 867\nAuswahl:");
-            int eingabe = Convert.ToInt16(Console.ReadLine());
-           
+            int eingabe = 0;
+            while (eingabe < 1 || eingabe > 3){
+                Console.Write("\nWählen Sie das Kopfspiel\n1: Standardkopfspiel\n2: Kopfspiel 0.1 DIN 867\n3: Kopfspiel 0.3 DIN 867\nAuswahl:");
+                eingabe = Convert.ToInt16(Console.ReadLine());
+                if (eingabe < 1 || eingabe > 3)     Console.WriteLine("\nFEHLER: Ungueltige Eingabe");
+            }
+
             switch (eingabe){
                 case 1:
                     Console.WriteLine("\nZahnfußhöhe mit Standardkopfspiel in mm:               " + (m + c) + "mm");
